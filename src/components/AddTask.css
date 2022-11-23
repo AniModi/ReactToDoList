@@ -1,0 +1,25 @@
+#addBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid slateblue;
+    width: 50%;
+    padding: 60px;
+    margin: 10px 0;
+    background-color: rgb(208, 234, 114);
+    font-size: 1.5rem;
+    font-weight: bold;   
+}
+
+input{
+    font-size: 1.5rem;
+    margin: 10px;
+    width: 60%;
+}
+@media screen and (max-width:800px){
+    input,#addBody{
+        font-size: 0.7rem;
+    }
+}
+
