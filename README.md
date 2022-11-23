@@ -1,5 +1,3 @@
----
-
 #TODO LIST
 
 ---
@@ -11,5 +9,4 @@ different project or got bored from this particular project. The asthetics of th
 
 #Features
 
----
 It is currently a simple react app. It adds or removes a task. Currently, the tasks will reset on reload as I have not implemented any kind of cloud storage.
