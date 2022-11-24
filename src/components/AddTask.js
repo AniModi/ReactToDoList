@@ -8,7 +8,6 @@ const AddTask = (props)=>{
     const [date,setDate] = useState('');
 
     const AddNewTask = ()=>{
-        console.log("HI");
     }
 
     const dateEvent = (event)=>{
@@ -23,7 +22,9 @@ const AddTask = (props)=>{
             task: task,
             date: new Date(date).getDate() + " " + months[new Date(date).getMonth()] + " " + new Date(date).getFullYear(),
             day:days[new Date(date).getDay()-1],
-            id:Math.random().toString()
+            id:Math.random().toString(),
+            sorting: new Date(date),
+            year:new Date(date).getFullYear()
         }
         props.onAddNewTask(newTask);
         setDate('');
@@ -35,10 +36,10 @@ const AddTask = (props)=>{
         <form id="addBody" onSubmit={prevRefresh}>
             <label htmlFor="Task">{"Please enter the task here: "}
             </label>
-            <input type = "text" id="Task" value = {task} onChange={taskEvent}></input>
+            <input type = "text" id="Task" value = {task} onChange={taskEvent} required></input>
             <label htmlFor="date">{"Please enter the date here: "}
             </label>
-            <input type = "date" id="date" onChange={dateEvent} value={date}></input>
+            <input type = "date" id="date" onChange={dateEvent} value={date} required></input>
             <input type = "submit" value={"Add Task"} onClick={AddNewTask}></input>
         </form>
     );
