@@ -56,7 +56,7 @@ const App = (props)=>{
         <div id="body">
         <Add onAddNewTask={newTask}/>
         <h1>TASKS:</h1>
-        <TODO items={filter==="NONE"?tasks:tasks.filter(x => x.year==filter)} onRemove={removeItUp}/>
+        <TODO items={filter==="NONE"?tasks:tasks.filter(x => x.year.toString()===filter)} onRemove={removeItUp}/>
         </div>
         </>
     )
