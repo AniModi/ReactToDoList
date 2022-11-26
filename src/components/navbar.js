@@ -15,7 +15,7 @@ const NavBar = (props)=>{
             <select onChange={selectHandler}>
                 <option value={"NONE"}>{"----Sort by year----"}</option>
                 <option value={"NONE"}>{"No filter"}</option>
-                {props.years.map(x=><option value={x}>{x}</option>)}
+                {props.years.map(x=><option value={x} key={x}>{x}</option>)}
             </select>
         </div>
     </nav>

@@ -9,7 +9,7 @@ const Todolist = (props)=>{
     
 
     return(<div id = "tasks">
- {props.items.map(tasks => (<TODO task = {tasks.task} date = {tasks.date} day = {tasks.day} id={tasks.id} onRemove={remove}/>))}
+ {props.items.map(tasks => (<TODO task = {tasks.task} date = {tasks.date} day = {tasks.day} key={tasks.id} id={tasks.id} onRemove={remove}/>))}
 
     </div>);
 }

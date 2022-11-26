@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React ,{useState,useEffect} from 'react';
 import TODO from './todolist'
 import Add from "./AddTask"
 import Nav from "./navbar"
@@ -21,9 +21,11 @@ var dummy = [
 const App = (props)=>{
     const [tasks,setTasks] = useState(dummy);
     const [years,setYears] = useState([new Date().getFullYear(),])
+    useEffect(()=>{if(localStorage.getItem("tasks"))setTasks(JSON.parse(localStorage.getItem("tasks")))},[]);
     const [filter,setFilter] = useState("NONE");
     const newTask = (data)=>{
         setTasks((prevTasks) =>{
+            localStorage.setItem("tasks",JSON.stringify([data,...prevTasks]));
             return [data,...prevTasks]
         })
         setYears((prevTasks)=>{
@@ -47,6 +49,7 @@ const App = (props)=>{
                     prevTasks.splice(prevTasks.indexOf(x),1);break;
                 }
             }
+            localStorage.setItem("tasks",JSON.stringify([...prevTasks]));
             return [...prevTasks]
         })
     }
